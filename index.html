@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Paulo FC</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>São Paulo Futebol Clube</h1>
+    </header>
+    <div class="container">
+        <h2>História do São Paulo FC</h2>
+        <p>O São Paulo Futebol Clube é um dos clubes mais tradicionais do Brasil...</p>
+        
+        <h2>Elenco Atual</h2>
+        <ul>
+            <li>Rafinha</li>
+            <li>Luciano</li>
+            <li>Calleri</li>
+            <li>Lucas Moura</li>
+        </ul>
+
+        <h2>Interaja com o São Paulo FC</h2>
+        <p>Clique no botão para ver o próximo jogo do São Paulo FC:</p>
+        <button id="proximoJogo">Próximo Jogo</button>
+        <p id="resultadoJogo"></p>
+    </div>
+
+    <script>
+        
+        const botaoProximoJogo = document.getElementById('proximoJogo');
+        const resultadoJogo = document.getElementById('resultadoJogo');
+
+        
+        const jogos = [
+            "São Paulo FC 2 x 1 rouborintias",
+            "São Paulo FC 2 x 1 coxa",
+            "Vasco  x  São Paulo em breve",
+        
+        ];
+
+        let indiceJogo = 0;
+
+        botaoProximoJogo.addEventListener('click', () => {
+            if (indiceJogo < jogos.length) {
+                resultadoJogo.textContent = jogos[indiceJogo];
+                indiceJogo++;
+            } else {
+                resultadoJogo.textContent = "Não há mais jogos programados.";
+            }
+        });
+    </script>
+</body>
+</html>
